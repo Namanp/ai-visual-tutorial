@@ -638,6 +638,7 @@
     <a class="nav-btn" href="#models">Claude vs GPT vs Gemini</a>
     <a class="nav-btn" href="#tools">Code Tools</a>
     <a class="nav-btn" href="#customize">Customize Claude</a>
+    <a class="nav-btn" href="#mcp">MCP</a>
     <a class="nav-btn" href="#links">Learn More</a>
   </div>
 </nav>
@@ -653,7 +654,7 @@
     </div>
     <div class="fade-up-2" style="margin-top: 3rem; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
       <div style="text-align:center;">
-        <div style="font-size: 2rem; font-weight: 800; color: var(--accent);">5</div>
+        <div style="font-size: 2rem; font-weight: 800; color: var(--accent);">6</div>
         <div style="font-size: 0.8rem; color: var(--muted);">Topics covered</div>
       </div>
       <div style="text-align:center;">
@@ -1336,10 +1337,162 @@
   </div>
 </section>
 
-<!-- SECTION 6: Further Reading -->
+<!-- SECTION 6: MCP -->
+<section id="mcp">
+  <div class="section-inner">
+    <div class="section-num">06 / The Plug Standard</div>
+    <h2>What is <span class="gradient-text">MCP</span>?</h2>
+    <p class="section-lead"><strong>Model Context Protocol</strong> — an open standard that lets AI connect to external tools and data sources in a consistent, plug-and-play way.</p>
+
+    <div class="analogy">
+      <strong>The best analogy: USB.</strong> Before USB, every device used a different cable — printers, cameras, keyboards all had unique connectors. USB created one universal standard so any device works with any computer. MCP does the same thing for AI: instead of each AI tool needing a custom integration with every service, MCP is the universal connector that makes any tool work with any AI.
+    </div>
+
+    <!-- Visual diagram -->
+    <div class="llm-diagram">
+      <p style="font-size: 0.82rem; color: var(--muted); text-align: center; margin-bottom: 1.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">Without MCP vs. With MCP</p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+        <!-- Without -->
+        <div>
+          <p style="font-size: 0.8rem; font-weight: 700; color: var(--accent2); text-align: center; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Before MCP</p>
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <div style="background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem 1rem; font-size: 0.82rem; display: flex; justify-content: space-between; align-items: center;">
+              <span>Claude + GitHub</span><span style="color: var(--accent2);">custom code</span>
+            </div>
+            <div style="background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem 1rem; font-size: 0.82rem; display: flex; justify-content: space-between; align-items: center;">
+              <span>Claude + Slack</span><span style="color: var(--accent2);">custom code</span>
+            </div>
+            <div style="background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem 1rem; font-size: 0.82rem; display: flex; justify-content: space-between; align-items: center;">
+              <span>GPT + GitHub</span><span style="color: var(--accent2);">custom code</span>
+            </div>
+            <div style="background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem 1rem; font-size: 0.82rem; display: flex; justify-content: space-between; align-items: center;">
+              <span>GPT + Slack</span><span style="color: var(--accent2);">custom code</span>
+            </div>
+            <div style="text-align: center; font-size: 0.78rem; color: var(--muted); margin-top: 0.25rem;">Every pair needs its own integration 😩</div>
+          </div>
+        </div>
+
+        <!-- With -->
+        <div>
+          <p style="font-size: 0.8rem; font-weight: 700; color: var(--accent3); text-align: center; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">With MCP</p>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.4rem;">
+            <div style="display: flex; gap: 0.5rem;">
+              <div style="background: rgba(124,111,255,0.15); border: 1px solid rgba(124,111,255,0.3); border-radius: 8px; padding: 0.5rem 0.75rem; font-size: 0.8rem; color: var(--accent);">Claude</div>
+              <div style="background: rgba(116,192,252,0.15); border: 1px solid rgba(116,192,252,0.3); border-radius: 8px; padding: 0.5rem 0.75rem; font-size: 0.8rem; color: var(--gpt);">GPT</div>
+              <div style="background: rgba(167,139,250,0.15); border: 1px solid rgba(167,139,250,0.3); border-radius: 8px; padding: 0.5rem 0.75rem; font-size: 0.8rem; color: var(--gemini);">Gemini</div>
+            </div>
+            <div style="font-size: 1.2rem; color: var(--muted);">↓</div>
+            <div style="background: linear-gradient(135deg, rgba(111,255,196,0.15), rgba(124,111,255,0.1)); border: 2px solid rgba(111,255,196,0.4); border-radius: 10px; padding: 0.6rem 1.5rem; font-size: 0.88rem; font-weight: 700; color: var(--accent3);">MCP Protocol</div>
+            <div style="font-size: 1.2rem; color: var(--muted);">↓</div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
+              <div style="background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem 0.75rem; font-size: 0.78rem;">GitHub</div>
+              <div style="background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem 0.75rem; font-size: 0.78rem;">Slack</div>
+              <div style="background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem 0.75rem; font-size: 0.78rem;">Postgres</div>
+              <div style="background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem 0.75rem; font-size: 0.78rem;">Figma</div>
+            </div>
+            <div style="text-align: center; font-size: 0.78rem; color: var(--muted); margin-top: 0.25rem;">One standard. Any AI. Any tool. 🎉</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <span class="card-icon">🔌</span>
+        <h3>MCP Servers</h3>
+        <p>Each tool (GitHub, Slack, a database) runs a small "MCP server" — a connector that speaks the MCP language. Once it exists, <em>any</em> MCP-compatible AI can use it immediately.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🤖</span>
+        <h3>MCP Clients</h3>
+        <p>AI tools like Claude Code, Cursor, and others are "MCP clients." They connect to MCP servers and can then use those tools as naturally as any built-in feature.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🌍</span>
+        <h3>Open Standard</h3>
+        <p>MCP is open source and not owned by any single company. Anthropic created it, but anyone can build MCP servers. There's already a huge ecosystem of community-built connectors.</p>
+      </div>
+    </div>
+
+    <!-- Real examples -->
+    <div style="margin-top: 2rem;">
+      <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 1rem;">What can Claude actually do with MCP?</h3>
+      <div class="example-list">
+        <div class="example-item">
+          <div class="example-emoji">🐙</div>
+          <div class="example-text">
+            <strong>GitHub MCP — "Create a pull request for this bug fix"</strong>
+            <span>Claude reads your code, writes the fix, creates a branch, commits, and opens a PR — all through MCP without leaving the chat</span>
+          </div>
+        </div>
+        <div class="example-item">
+          <div class="example-emoji">🗄️</div>
+          <div class="example-text">
+            <strong>Database MCP — "How many users signed up last week?"</strong>
+            <span>Claude connects directly to your Postgres or SQLite database, writes and runs the SQL query, and shows you the answer</span>
+          </div>
+        </div>
+        <div class="example-item">
+          <div class="example-emoji">💬</div>
+          <div class="example-text">
+            <strong>Slack MCP — "Summarize what the team discussed today"</strong>
+            <span>Claude reads your Slack channels and gives you a human-readable summary of all the day's conversations</span>
+          </div>
+        </div>
+        <div class="example-item">
+          <div class="example-emoji">🗺️</div>
+          <div class="example-text">
+            <strong>Maps MCP — "Find coffee shops near our office"</strong>
+            <span>Claude calls the Google Maps API through MCP and returns real, current location results</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- How to add -->
+    <div class="card" style="margin-top: 2rem;">
+      <h3 style="margin-bottom: 0.75rem;">Adding an MCP server to Claude Code</h3>
+      <p style="font-size: 0.88rem; color: var(--muted); margin-bottom: 1rem;">It's usually one command. For example, to add the GitHub MCP server:</p>
+      <div class="code-block">
+        <span class="comment"># Add the GitHub MCP server to Claude Code</span><br>
+        claude mcp add github -- npx -y @modelcontextprotocol/server-github<br><br>
+        <span class="comment"># Now you can ask Claude things like:</span><br>
+        <span class="string">"List my open pull requests"</span><br>
+        <span class="string">"Create an issue for the bug I just described"</span><br>
+        <span class="string">"Show me the last 5 commits on main"</span>
+      </div>
+    </div>
+
+    <div class="links-grid" style="margin-top: 1.5rem;">
+      <a class="link-card" href="https://modelcontextprotocol.io" target="_blank">
+        <span class="link-icon">🌐</span>
+        <div class="link-text"><div class="link-title">MCP official site</div><div class="link-sub">modelcontextprotocol.io</div></div>
+        <span class="link-arrow">↗</span>
+      </a>
+      <a class="link-card" href="https://github.com/modelcontextprotocol/servers" target="_blank">
+        <span class="link-icon">🐙</span>
+        <div class="link-text"><div class="link-title">MCP server directory</div><div class="link-sub">Browse available connectors on GitHub</div></div>
+        <span class="link-arrow">↗</span>
+      </a>
+      <a class="link-card" href="https://docs.anthropic.com/en/docs/claude-code/mcp" target="_blank">
+        <span class="link-icon">📖</span>
+        <div class="link-text"><div class="link-title">MCP in Claude Code</div><div class="link-sub">Official setup guide</div></div>
+        <span class="link-arrow">↗</span>
+      </a>
+      <a class="link-card" href="https://www.youtube.com/watch?v=dSWkdGRYFhY" target="_blank">
+        <span class="link-icon">▶️</span>
+        <div class="link-text"><div class="link-title">MCP explained (video)</div><div class="link-sub">Visual walkthrough</div></div>
+        <span class="link-arrow">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: Further Reading -->
 <section id="links">
   <div class="section-inner">
-    <div class="section-num">06 / Go Deeper</div>
+    <div class="section-num">07 / Go Deeper</div>
     <h2>Keep <span class="gradient-text">Learning</span></h2>
     <p class="section-lead">You've covered the fundamentals. Here are the best resources to go deeper on each topic.</p>
 
